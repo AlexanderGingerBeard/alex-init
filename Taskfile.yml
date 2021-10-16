@@ -1,6 +1,8 @@
 # https://taskfile.dev
 
 version: '3'
+includes:
+  yairda: _tasks/yairda.tasks.yml
 
 vars:
   GREETING: Hello, World!
@@ -11,23 +13,23 @@ tasks:
       - echo "{{.GREETING}}"
       - echo "{{.GREETING}}"
     silent: true
-  
+
   second:
     desc: second task
-    cmds: 
+    cmds:
       - echo "Hello Shura"
 
   third:
     desc: third task winpty
     cmds:
-      - cmd /c dir 
-      - echo "Hello Vanya"    
+      - cmd /c dir
+      - echo "Hello Vanya"
 
   forth:
     desc: forth task winpty
     cmds:
-      - ls 
-      - echo "Hello Vanya"       
+      - ls
+      - echo "Hello Vanya"
 
 
   git-init:
@@ -47,4 +49,4 @@ tasks:
     cmds:
      - |-
         git config --global user.email "galileo@gmail.com"
-        git config --global user.name "Galileo"  
+        git config --global user.name "Galileo"

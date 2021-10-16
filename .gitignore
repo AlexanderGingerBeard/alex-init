@@ -1,0 +1,7 @@
+.vscode
+.idea
+*.pyc
+out_*
+out/*
+_put*
+tmp*
