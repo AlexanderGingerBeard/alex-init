@@ -1,0 +1,50 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+      - echo "{{.GREETING}}"
+    silent: true
+  
+  second:
+    desc: second task
+    cmds: 
+      - echo "Hello Shura"
+
+  third:
+    desc: third task winpty
+    cmds:
+      - cmd /c dir 
+      - echo "Hello Vanya"    
+
+  forth:
+    desc: forth task winpty
+    cmds:
+      - ls 
+      - echo "Hello Vanya"       
+
+
+  git-init:
+    desc: _
+    cmds:
+     - |-
+        echo "# alex-init" >> README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin git@github.com:AlexanderGingerBeard/alex-init.git
+        git push -u origin main
+
+  gitcommit-init:
+    desc: _
+    cmds:
+     - |-
+        git config --global user.email "galileo@gmail.com"
+        git config --global user.name "Galileo"  
